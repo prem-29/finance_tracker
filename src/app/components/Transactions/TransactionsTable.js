@@ -41,7 +41,7 @@ function TransactionsTable({ transactions }) {
                 <input
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    placeholder="Search by name"
+                    placeholder="Search by Name"
                     style={{ borderRadius: '5px', border: '1px solid #d9d9d9', padding: '0.5rem', flex: 6 }}
                 />
                 <Select
@@ -54,7 +54,7 @@ function TransactionsTable({ transactions }) {
                 >
                     <Option value="">All</Option>
                     <Option value="Income">Income</Option>
-                    <Option value="Expense">Expense</Option>
+                    <Option value="Expenses">Expenses</Option>
                 </Select>
             </div>
             <div className="my-table">
