@@ -8,12 +8,13 @@ function MyButton({ onClick }) {
 
 const styles = {
     buttonStyle: {
-        height: 30,
-        width: 100,
-        backgroundColor: 'blue',
+        top: 10,
+        height: 40,
+        width: 120,
+        backgroundColor: "#081c15",
         color: 'white',
         borderRadius: '10px',
-        borderColor: 'blue'
+        borderColor: 'rgb(43, 85, 3)'
     }
 }
 export default MyButton;

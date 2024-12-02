@@ -5,6 +5,8 @@ import AddIncome from '../Modals/AddIncome'
 import Expenses from '../Modals/Expenses'
 import TransactionsTable from '../Transactions/TransactionsTable'
 import Charts from '../Charts/Charts'
+import NoTransactions from '../../assets/NoTransactions'
+import './styles.css'
 
 
 function Dashboard() {
@@ -70,8 +72,9 @@ function Dashboard() {
             <Cards showIncomeModal={handleIncomeVisible} showExpenseModal={handleExpenseVisible} income={incomeTotal} expenses={expenseTotal} balance={balance} />
             <AddIncome isIncomeVisible={incomeVisible} handleIncomeCancel={handleIncomeClose} onFinish={onFinish} />
             <Expenses isExpenseVisible={expenseVisible} handleExpenseCancel={handleExpenseClose} onFinish={onFinish} />
-            <TransactionsTable transactions={transactions} />
-            <Charts transactions={transactions} />
+            {balance ? (<><TransactionsTable transactions={transactions} />
+                <Charts transactions={transactions} /> </>) : <div style={{ display: 'flex', justifyContent: 'center' }}><div><div className='noTransStyle'><NoTransactions /></div>
+                    <p style={{ padding: 25, margin: 10 }}>You Have No Transactions Currently</p></div></div>}
         </div>
     )
 }

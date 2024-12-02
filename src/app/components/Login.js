@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectList, loginSuccess } from '../slices/user_slice';
-import { FaUserCircle } from "react-icons/fa";
+// import { FaUserCircle } from "react-icons/fa";
 import MyButton from './MyButton';
 import { useNavigate } from 'react-router-dom'
+import { Image } from "antd";
+import userImage from '../assets/user.png'
+import loginImage from '../assets/loginscreen.jpg'
 const Login = () => {
     const dispatch = useDispatch();
     const getuserList = useSelector(selectList);
@@ -42,12 +45,13 @@ const Login = () => {
     }
 
     return (
-        <section>
+        <section style={{ backgroundImage: `url(${loginImage})`, backgroundSize: 'cover', height: '100vh', backgroundRepeat: 'no-repeat' }}>
             <div style={styles.container}>
                 <div style={styles.form}>
-                    <h1 style={{ textAlign: 'center' }}>Login</h1>
-                    <div style={{ display: 'flex', justifyContent: 'center', margin: 10 }}>
-                        <FaUserCircle style={{ width: 50, height: 50 }} />
+                    <h1 style={{ textAlign: 'center', color: "#081c15" }}>Login</h1>
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        {/* <FaUserCircle style={{ width: 50, height: 50 }} /> */}
+                        <Image src={userImage} alt="User" width={100} height={100} />
                     </div>
                     <div>
                         <p style={styles.text}>Email *</p>
@@ -66,11 +70,12 @@ const Login = () => {
                         <MyButton onClick={handleSubmit} />
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <p>Or</p>
+                        <p>Email: abc@gmail.com</p>
                     </div>
-                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: -20 }}>
-                        <p><u>Register
-                        </u></p>
+                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: -30 }}>
+                        <p>Password: 1234</p>
+                        {/* <p><u>Register
+                        </u></p> */}
                     </div>
                 </div>
             </div>
@@ -81,18 +86,20 @@ const Login = () => {
 const styles = {
     container: {
         display: 'flex',
-        justifyContent: 'center',
+        // justifyContent: 'flex-start',
         alignItems: 'center',
         height: '100vh', // to center vertically
+        paddingLeft: 40,
     },
     form: {
         display: 'flex',
         flexDirection: 'column',
-        width: '300px',
+        width: '500px',
         borderRadius: '10px',
         borderWidth: '1px',
         borderStyle: 'solid',
-        padding: 50
+        padding: 50,
+        backgroundColor: 'white'
     },
     fieldStyle: {
         display: 'flex',
