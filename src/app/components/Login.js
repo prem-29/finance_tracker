@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import { Image } from "antd";
 import userImage from '../assets/user.png'
 import loginImage from '../assets/loginscreen.jpg'
+import financeImage from '../assets/finance_tracker.png'
 const Login = () => {
     const dispatch = useDispatch();
     const getuserList = useSelector(selectList);
@@ -47,6 +48,11 @@ const Login = () => {
     return (
         <section style={{ backgroundImage: `url(${loginImage})`, backgroundSize: 'cover', height: '100vh', backgroundRepeat: 'no-repeat' }}>
             <div style={styles.container}>
+                <div style={{ padding: 40, margin: 40 }}>
+                    <Image src={financeImage} alt="finance_image" width={650} height={700} style={{ userSelect: 'none', pointerEvents: 'none' }}
+                        onContextMenu={(e) => e.preventDefault()}
+                        draggable="false" />
+                </div>
                 <div style={styles.form}>
                     <h1 style={{ textAlign: 'center', color: "#081c15" }}>Login</h1>
                     <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -78,6 +84,7 @@ const Login = () => {
                         </u></p> */}
                     </div>
                 </div>
+
             </div>
         </section>
     )
@@ -99,7 +106,8 @@ const styles = {
         borderWidth: '1px',
         borderStyle: 'solid',
         padding: 50,
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        height: 550
     },
     fieldStyle: {
         display: 'flex',
